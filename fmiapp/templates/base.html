@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Farmer Merchant Integration</title>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"/>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Headline Start-->
+        <div class="row bg-danger text-light">
+            <div class="col-sm-4">
+                Call Us : +91-9453318798
+            </div>
+            <div class="col-sm-4">
+                Email : email@gmail.com
+            </div>
+            <div class="col-sm-4">
+                Address : Fatehpur, Barabanki, U.P.
+            </div>
+        </div>
+        <!-- Headline Close-->
+
+        <!-- Menu Section -->
+        <div class="row">
+            <div class="col-sm-12 p-0">
+                <nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">FMI</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">About Us</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Registration
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'farmerreg' %}">Farmer Registration</a></li>
+            <li><a class="dropdown-item" href="{% url 'merchantreg' %}">Merchant Registration</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+            </div>
+        </div>
+        <!-- End Menu Section -->
+   <!--slider-->
+     <div class="row">
+         <div class="col-sm-12 p-0">
+             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/slider_1.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/slider_2.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/slider_3.png' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/slider_4.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/slider_5.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+         </div>
+     </div>
+
+   <!--close slider-->
+  <!-- Content Section-->
+        <div class="row mt-5">
+            <div class="col-sm-4 border p-0">
+                <div class="bg-danger text-light text-center">
+                    <h4>Notice Board</h4>
+                    <marquee behavior="alternate">
+                    {% for n in ns %}
+                        <p style="text-align:center;">{{n.newstext}}</p>
+                    {% endfor %}
+                    </marquee>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                {% block body %}
+
+                {% endblock body %}
+            </div>
+        </div>
+  <!-- Close Content Section -->
+        <!-- Footer Section -->
+        <div class="row bg-dark py-4">
+            <div class="col-sm-4 text-center text-light">
+                <h4>Farmer Merchant Integration</h4>
+            </div>
+            <div class="col-sm-4 text-center text-light">
+                <h4>Farmer Merchant Integration</h4>
+            </div>
+            <div class="col-sm-4 text-center text-light">
+                <h4>Farmer Merchant Integration</h4>
+            </div>
+        </div>
+
+        <!-- End Footer Section -->
+
+
+    </div>
+</body>
+</html>
